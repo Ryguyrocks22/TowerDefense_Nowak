@@ -3880,7 +3880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.40557975, y: -0.579228, z: 0.40557975, w: 0.579228}
-  m_LocalPosition: {x: 27.79, y: 43.29, z: 16.86}
+  m_LocalPosition: {x: 29.89, y: 43.37, z: 16.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5224,9 +5224,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1e0beb836cc9044a6afc491ed023f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3550613352242837479, guid: 3c29be4699d0a8143b3ee2d9af946621, type: 3}
+  waves:
+  - enemy: {fileID: 3062442547713511685, guid: 3c29be4699d0a8143b3ee2d9af946621, type: 3}
+    count: 2
+    rate: 1
+  - enemy: {fileID: 3062442547713511685, guid: 3c29be4699d0a8143b3ee2d9af946621, type: 3}
+    count: 5
+    rate: 1
+  - enemy: {fileID: 2604621196320269870, guid: bca8a1eb742751c41967e9bd1b98a06e, type: 3}
+    count: 4
+    rate: 1
+  - enemy: {fileID: 2604621196320269870, guid: bca8a1eb742751c41967e9bd1b98a06e, type: 3}
+    count: 10
+    rate: 0.5
+  - enemy: {fileID: 0}
+    count: 0
+    rate: 0
   spawnPoint: {fileID: 208932775}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 5
   waveCountdownText: {fileID: 483175202}
 --- !u!4 &1440121869
 Transform:
