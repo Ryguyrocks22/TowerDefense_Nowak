@@ -6,6 +6,7 @@ public class Turret : MonoBehaviour
 {
     //may cause problems
     private Transform target;
+    private Enemy targetEnemy;
 
     [Header("General")]
 
@@ -17,6 +18,11 @@ public class Turret : MonoBehaviour
     private float fireCountdown = 0f;
 
     [Header("Use Laser")]
+    public bool useLaser = false;
+    public int damageOverTime = 20;
+    public float slowAmount = .5f;
+
+    public LineRenderer lineRenderer;
 
     [Header("Setup Fields")]
     public string enemyTag = "Enemy";
@@ -51,7 +57,7 @@ public class Turret : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-            
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
@@ -64,12 +70,17 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
         {
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                    
+                }
+            }
+
             return;
         }
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler (0f, rotation.y, 0f);
 
         if (fireCountdown <= 0f)
         {
@@ -78,8 +89,48 @@ public class Turret : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime;
+
+        LockOnTarget();
+
+        if (useLaser)
+        {
+            Laser();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+
+            fireCountdown -= Time.deltaTime;
+        }
     }
 
+
+
+    void LockOnTarget()
+    {
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+    void Laser ()
+    {
+        targetEnemy.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowAmount);
+
+        if (!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+        }
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+    }
 
     void Shoot()
     {
