@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    //may cause problems
+    
+
     private Transform target;
     private Enemy targetEnemy;
 
@@ -36,6 +37,7 @@ public class Turret : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
     }
 
     void UpdateTarget()
@@ -136,7 +138,6 @@ public class Turret : MonoBehaviour
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-
         if (bullet != null)
         {
             bullet.Seek(target);
