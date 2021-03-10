@@ -1555,13 +1555,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 7
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '$150
+  m_Text: '$175
 
 '
 --- !u!222 &288143109
@@ -3308,7 +3308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 8.38}
+  m_AnchoredPosition: {x: 0, y: -7}
   m_SizeDelta: {x: 0, y: 16.769608}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819553028
@@ -4937,7 +4937,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 7
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5683,8 +5683,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -60.30005, y: 0.053429}
-  m_SizeDelta: {x: 125, y: 500.0299}
+  m_AnchoredPosition: {x: -69.3, y: 0.053429}
+  m_SizeDelta: {x: 143.03708, y: 500.0299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583721771
 MonoBehaviour:
@@ -5767,7 +5767,7 @@ MonoBehaviour:
     cost: 100
   laserBeamer:
     prefab: {fileID: 1047471137060523832, guid: c7e30cda92481774bae29fac8e5c6388, type: 3}
-    cost: 150
+    cost: 175
 --- !u!1001 &1588865381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6628,7 +6628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -36.45}
+  m_AnchoredPosition: {x: 0, y: -53}
   m_SizeDelta: {x: 0, y: -72.89302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812899937
@@ -6644,7 +6644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.04392131, g: 0.049826164, b: 0.066037714, a: 0.3137255}
+  m_Color: {r: 0.24959952, g: 0.41482744, b: 0.745283, a: 0.3137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8024,6 +8024,14 @@ PrefabInstance:
     - target: {fileID: 5659393257853370517, guid: 8f5bfee9a6493b54baac37f3f0d4fc6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659393257853370518, guid: 8f5bfee9a6493b54baac37f3f0d4fc6c, type: 3}
+      propertyPath: m_PreferredWidth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659393257853370518, guid: 8f5bfee9a6493b54baac37f3f0d4fc6c, type: 3}
+      propertyPath: m_PreferredHeight
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5659393257853370519, guid: 8f5bfee9a6493b54baac37f3f0d4fc6c, type: 3}
       propertyPath: m_LocalPosition.x
