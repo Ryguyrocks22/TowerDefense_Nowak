@@ -7,11 +7,16 @@ public class Turret : MonoBehaviour
     //may cause problems
     private Transform target;
 
-    [Header("Attributes")]
+    [Header("General")]
 
     public float range = 15f;
+
+    [Header("Use Bullets (default)")]
+    public GameObject bulletPrefab;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+
+    [Header("Use Laser")]
 
     [Header("Setup Fields")]
     public string enemyTag = "Enemy";
@@ -19,7 +24,6 @@ public class Turret : MonoBehaviour
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    public GameObject bulletPrefab;
     public Transform firePoint;
 
     // Start is called before the first frame update
