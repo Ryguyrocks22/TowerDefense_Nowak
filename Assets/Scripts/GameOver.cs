@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -13,6 +14,6 @@ public class GameOver : MonoBehaviour
 
     public void Menu()
     {
-        Debug.Log("MENU");
+        SceneManager.LoadScene(0);
     }
 }

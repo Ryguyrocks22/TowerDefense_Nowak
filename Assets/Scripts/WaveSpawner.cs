@@ -57,7 +57,9 @@ public class WaveSpawner : MonoBehaviour
 
         if (waveIndex == waves.Length)
         {
+            yield return new WaitForSeconds(5);
             SceneManager.LoadScene(3);
+            this.enabled = false;
         }
 
         
