@@ -34,4 +34,10 @@ public class Enemy : MonoBehaviour
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
     }
+
+    void EndPath ()
+    {
+        PlayerStats.Lives--;
+        Destroy(gameObject);
+    }
 }
