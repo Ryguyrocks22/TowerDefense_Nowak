@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
+    public AudioSource loseLife;
     private Transform target;
     private int wavepointIndex = 0;
 
@@ -16,6 +17,10 @@ public class EnemyMovement : MonoBehaviour
         enemy = GetComponent<Enemy>();
 
         target = Waypoints.points[0];
+
+        loseLife = GetComponent<AudioSource> ();
+
+
     }
 
     void Update()
@@ -45,6 +50,7 @@ public class EnemyMovement : MonoBehaviour
 
     void EndPath()
     {
+        
         PlayerStats.Lives--;
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
