@@ -43,11 +43,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
+  bulletPrefab: {fileID: 1806935295073861517, guid: ba5fc0d98f9413a419b487c78c12e615, type: 3}
   fireRate: 1
+  useLaser: 0
+  damageOverTime: 10
+  slowAmount: 0.8
+  lineRenderer: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 3609415620344642471}
   turnSpeed: 10
-  bulletPrefab: {fileID: 1806935295073861517, guid: ba5fc0d98f9413a419b487c78c12e615, type: 3}
   firePoint: {fileID: 1177967869}
 --- !u!1001 &3609415620483426910
 PrefabInstance:
@@ -58,7 +62,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 939335178, guid: 29f393efdc386ee41aee6077912722cf, type: 3}
       propertyPath: m_Name
-      value: Turret_basic
+      value: Turret_basic(Red)
       objectReference: {fileID: 0}
     - target: {fileID: 939335179, guid: 29f393efdc386ee41aee6077912722cf, type: 3}
       propertyPath: m_LocalPosition.x

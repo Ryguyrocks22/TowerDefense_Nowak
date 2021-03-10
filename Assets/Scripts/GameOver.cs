@@ -6,7 +6,7 @@ public class GameOver : MonoBehaviour
 
     public Text roundsText;
 
-    private void OnEnable()
+    void OnEnable()
     {
         roundsText.text = PlayerStats.Rounds.ToString();
     }
