@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   health: 150
-  worth: 50
+  worth: 25
   speed: 10
 --- !u!114 &-7548023329126222522
 MonoBehaviour:
