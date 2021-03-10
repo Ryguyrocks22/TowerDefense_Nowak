@@ -2,6 +2,8 @@
 
 public class Enemy : MonoBehaviour
 {
+    public int health = 100;
+    public int value = 50;
     public float speed = 10f;
 
     private Transform target;
@@ -10,6 +12,22 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         target = Waypoints.points[0];
+    }
+
+    public void TakeDamage (int amount)
+    {
+        health -= amount;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        PlayerStats.Money += value;
+        Destroy(gameObject);
     }
 
     void Update()
